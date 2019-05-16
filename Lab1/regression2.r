@@ -1,0 +1,7 @@
+x <- c(1:20)
+y <- c(2,4,8,16,32,64,128,244,458,904,1591,2932,4506,5598,10150,15446,23860,35204,41764,51008)
+result <- data.frame(x, y)
+myfit <- lm(y~I(x^9)+I(x^8)+I(x^7)+I(x^6)+I(x^5)+I(x^4)+I(x^3)+I(x^2)+x,data=result)
+print(coefficients(myfit))
+plot(result, col=2)
+lines(x,fitted(myfit))
